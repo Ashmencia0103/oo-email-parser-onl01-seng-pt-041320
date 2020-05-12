@@ -12,8 +12,27 @@ class EmailAddressParser
   end
 
   def parse
-    puts splitEmail = emails.split.collect {|address| address.split(',')}
-    returnArr = splitEmail.flatten.uniq
-    returnArr
+    # "john@doe.com, person@somewhere.org"
+    puts splitEmail = emails.split
+    # ["john@doe.com,", "person@somehwhere.org"]
+    .map {|address|
+      # 1. john@doe.com,
+      # 2. person@somewhere.org
+      address.split(',')
+      # 1. ["john@doe.com", ""]
+      # 2. ["person@somehwhere.org"]
+    }
+    # [  
+    #   ["john@doe.com", ""], 
+    #   ["person@somewhere.org"]
+    # ]
+    
+    emailArr = splitEmail.flatten
+    # ["john@doe.com", "", "person@somewhere.org"]
+
+    .uniq
+    # ["john@doe.com", "person@somewhere.org"]
+
+    emailArr
   end
 end
