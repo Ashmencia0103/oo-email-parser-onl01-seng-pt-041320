@@ -22,11 +22,11 @@ class EmailAddressParser
       # 1. ["john@doe.com", ""]
       # 2. ["person@somehwhere.org"]
     }
-    # [  
-    #   ["john@doe.com", ""], 
+    # [
+    #   ["john@doe.com", ""],
     #   ["person@somewhere.org"]
     # ]
-    
+
     emailArr = splitEmail.flatten
     # ["john@doe.com", "", "person@somewhere.org"]
 
